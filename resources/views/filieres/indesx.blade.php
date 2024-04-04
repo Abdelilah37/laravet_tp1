@@ -42,7 +42,7 @@
         <form class="d-inline-block" action="{{route('filiers.destroy',$filiere['id'])}}" method="post">
         @csrf
         @method('delete')
-    <input type="submit" value="delet" class="border border-0 bg-white  text-danger d-inline-block">
+    <input onclick="return confirm('voulez vous supprimer cette filiere')" type="submit" value="delet" class="border border-0 bg-white  text-danger d-inline-block">
     </form>
     </td>
 </tr>

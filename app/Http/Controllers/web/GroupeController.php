@@ -4,6 +4,7 @@ namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\GroupeRequest;
 use App\Models\Groupe;
 use App\Models\Filiere;
 
@@ -32,7 +33,7 @@ class GroupeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(GroupeRequest $request)
     {
         //
         Groupe::create([
@@ -67,7 +68,7 @@ class GroupeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(GroupeRequest $request, string $id)
     {
         //
         $groupe=Groupe::find($id);

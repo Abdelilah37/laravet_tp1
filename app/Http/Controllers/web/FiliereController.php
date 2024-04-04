@@ -5,6 +5,8 @@ namespace App\Http\Controllers\web;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Filiere;
+use App\Http\Requests\FiliereRequest;
+
 
 class FiliereController extends Controller
 {
@@ -29,7 +31,7 @@ class FiliereController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(FiliereRequest $request)
     {
         //
         $filier=Filiere::create([
@@ -65,7 +67,7 @@ class FiliereController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(FiliereRequest $request, string $id)
     {
         //
         $filiere=Filiere::find($id);

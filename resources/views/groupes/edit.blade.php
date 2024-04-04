@@ -17,26 +17,45 @@
                             <label for="titre" class="form-lable"> Libelle</label>
                         </th>
                         <td>
-                            <input required type="text" name="libelle" value="{{$groupe->libelle}}" id="libelle" class="form-control">
+                            <input  type="text" name="libelle" value="{{$groupe->libelle}}" id="libelle" class="form-control">
                         </td>
                     </tr>
-
+                    @error('libelle')
+                    <tr>
+                        <td colspan="2">
+                            <p class="text-center">
+                                <i class="text-danger">{{ $message }}</i>
+                            </p>
+                        </td>
+                    </tr>
+                @enderror
                     <tr>
                         <th>
                             <label for="discription" class="form-lable"> Filier</label>
                         </th>
                         <td>
-                            <select name="filiere_id" id="" class="form-control" required>
-                                <option selected>Coisair la filiere</option>
+                            <select name="filiere_id" id="" class="form-control" >
+
                                 @foreach ($filieres as $filiere)
-                                <option value="{{$filiere->id}}">{{$filiere->titre}}</option>
+                                <option @if ($filiere->id == $groupe->filiere_id) selected
+
+                                @endif value="{{$filiere->id}}">{{$filiere->titre}}</option>
                                 @endforeach
                             </select>
                         </td>
                     </tr>
+                    @error('filiere_id')
+                        <tr>
+                            <td colspan="2">
+                                <p class="text-center">
+                                    <i class="text-danger">{{ $message }}</i>
+                                </p>
+                            </td>
+                        </tr>
+                    @enderror
                     <tr>
                         <td></td>
-                        <td class="d-flex justify-content-between mt-4"><input type="submit" value="Ajouter"
+                        <td class="d-flex justify-content-between mt-4"><input type="submit" value="Modifier"
                                 class="btn btn-outline-info"><a href="{{ route('groupes.index') }}"
                                 class="btn btn-outline-danger">Retour</a></td>
                     </tr>

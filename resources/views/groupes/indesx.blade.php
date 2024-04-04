@@ -42,7 +42,7 @@
         <form class="d-inline-block" action="{{route('groupes.destroy',$groupe['id'])}}" method="post">
         @csrf
         @method('delete')
-    <input type="submit" value="delet" class="border border-0 bg-white  text-danger d-inline-block">
+    <input type="submit" value="delet" class="border border-0 bg-white  text-danger d-inline-block" onclick="return confirm('voulez vous supprimer ce groupe')">
     </form>
     </td>
 </tr>

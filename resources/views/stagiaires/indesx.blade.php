@@ -22,7 +22,7 @@
                     <th></th>
 
                     <th>Nom complet</th>
-                    
+
                     <th>Date de naissance</th>
 
                     <th>Groupe</th>
@@ -45,7 +45,7 @@
         <form class="d-inline-block" action="{{route('stagiaires.destroy',$stagiaire['id'])}}" method="post">
         @csrf
         @method('delete')
-    <input type="submit" value="delet" class="border border-0 bg-white  text-danger d-inline-block">
+    <input type="submit" value="delet" class="border border-0 bg-white  text-danger d-inline-block" onclick="return confirm('voulez vous supprimer ce stagiaire')">
     </form>
     </td>
 </tr>

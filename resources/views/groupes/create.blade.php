@@ -17,8 +17,20 @@
                             <label for="titre" class="form-lable"> Libelle</label>
                         </th>
                         <td>
-                            <input required type="text" name="libelle" id="libelle" class="form-control">
+                            <input type="text" name="libelle" id="libelle" class="form-control">
+
                         </td>
+
+                    @error('libelle')
+                        <tr>
+                            <td colspan="2">
+                                <p class="text-center">
+                                    <i class="text-danger">{{ $message }}</i>
+                                </p>
+                            </td>
+                        </tr>
+                    @enderror
+
                     </tr>
 
                     <tr>
@@ -29,11 +41,20 @@
                             <select name="filiere_id" id="" class="form-control">
                                 <option selected>Coisair la filiere</option>
                                 @foreach ($filieres as $filiere)
-                                <option value="{{$filiere->id}}">{{$filiere->titre}}</option>
+                                    <option  value="{{ $filiere->id }}">{{ $filiere->titre }}</option>
                                 @endforeach
                             </select>
                         </td>
                     </tr>
+                    @error('filiere_id')
+                        <tr>
+                            <td colspan="2">
+                                <p class="text-center">
+                                    <i class="text-danger">{{ $message }}</i>
+                                </p>
+                            </td>
+                        </tr>
+                    @enderror
                     <tr>
                         <td></td>
                         <td class="d-flex justify-content-between mt-4"><input type="submit" value="Ajouter"

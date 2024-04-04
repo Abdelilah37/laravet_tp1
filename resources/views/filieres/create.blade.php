@@ -16,19 +16,36 @@
                             <label for="titre" class="form-lable"> Titre</label>
                         </th>
                         <td>
-                            <input required type="text" name="titre" id="titre" class="form-control">
+                            <input type="text" name="titre" id="titre" class="form-control">
+
                         </td>
                     </tr>
-
+                    @error('titre')
+                        <tr>
+                            <td colspan="2">
+                                <p class="text-center">
+                                    <i class="text-danger">{{ $message }}</i>
+                                </p>
+                            </td>
+                        </tr>
+                    @enderror
                     <tr>
                         <th>
                             <label for="discription" class="form-lable"> Description</label>
                         </th>
                         <td>
-                            <textarea required type="text" name="description" id="discription" class="form-control" rows="3"
-                                cols="10"></textarea>
+                            <textarea type="text" name="description" id="discription" class="form-control" rows="3" cols="10"></textarea>
                         </td>
                     </tr>
+                    @error('description')
+                        <tr>
+                            <td colspan="2">
+                                <p class="text-center">
+                                    <i class="text-danger">{{ $message }}</i>
+                                </p>
+                            </td>
+                        </tr>
+                    @enderror
                     <tr>
                         <td></td>
                         <td class="d-flex justify-content-between mt-4"><input type="submit" value="Ajouter"

@@ -118,7 +118,7 @@
                             <a class="nav-link @yield('groupe')" href="{{ route('groupes.index') }}">Groupes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @yield('stagiare')" href="{{ route('stagiaires.index') }}">Stagiaires</a>
+                            <a class="nav-link @yield('stagiaire')" href="{{ route('stagiaires.index') }}">Stagiaires</a>
                         </li>
                     </ul>
 
